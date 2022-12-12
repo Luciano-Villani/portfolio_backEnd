@@ -1,0 +1,48 @@
+
+package com.backend.api.controller;
+
+import com.backend.api.model.Informacion;
+import com.backend.api.services.IInformacionService;
+import java.util.List;
+//import static org.hibernate.criterion.Projections.id;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+        
+
+public class InformacionController {
+    
+  @Autowired
+  private IInformacionService infoServ;
+  
+  
+    @PostMapping ("/new/informacion")
+    public void agregarInformacion (@RequestBody Informacion infos){
+        
+        infoServ.crearInformacion(infos);
+    }
+    @GetMapping ("/ver/informacion")
+    @ResponseBody
+    public List<Informacion> verInformacion (){
+        return infoServ.verInformacion();
+        
+    }
+    @DeleteMapping("/informacion/delete/{id}")
+    public void borrarInformacion (@PathVariable Long id){
+        infoServ.borrarInformacion(id);
+        
+        //agregado mio
+    }
+    @PutMapping ("/actualizar/informacion")
+    public void actualizarInformacion (@RequestBody Informacion infos){
+        infoServ.actualizarInformacion(infos);
+}
+}
