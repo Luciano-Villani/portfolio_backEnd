@@ -2,8 +2,7 @@
 package com.backend.api.controller;
 
 
-import com.backend.api.model.Persona;
-import com.backend.api.services.IPersonaService;
+import com.backend.api.model.Experiencia;
 import java.util.List;
 import static org.hibernate.criterion.Projections.id;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,32 +14,33 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.backend.api.services.IExperienciaService;
 
 @RestController
         
-public class controller {
+public class ExperienciaController {
     
   @Autowired
-  private IPersonaService persoServ;
+  private IExperienciaService expServ;
   
-    @PostMapping ("/new/persona")
-    public void agregarPersona (@RequestBody Persona pers){
-        persoServ.crearPersona(pers);
+    @PostMapping ("/new/experiencia")
+    public void agregarExperiencia (@RequestBody Experiencia exp){
+        expServ.crearExperiencia(exp);
     }
-    @GetMapping ("/ver/personas")
+    @GetMapping ("/ver/experiencias")
     @ResponseBody
-    public List<Persona> verPersonas (){
-        return persoServ.verPersonas();
+    public List<Experiencia> verExperiencias (){
+        return expServ.verExperiencias();
         
     }
-    @DeleteMapping("/delete/{id}")
-    public void borrarPersona (@PathVariable Long id){
-        persoServ.borrarPersona(id);
+    @DeleteMapping("/delete/experiencia/{id}")
+    public void borrarExperiencia (@PathVariable Long id){
+        expServ.borrarExperiencia(id);
         
         //agregado mio
     }
-    @PutMapping ("/actualizar/persona")
-    public void actualizarPersona (@RequestBody Persona pers){
-        persoServ.actualizarPersona(pers);
+    @PutMapping ("/actualizar/experiencia")
+    public void actualizarExperiencia (@RequestBody Experiencia exp){
+        expServ.actualizarExperiencia(exp);
 }
 }
