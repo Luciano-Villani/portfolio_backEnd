@@ -16,12 +16,12 @@ public class SoftSkills {
     
     private Long id;
     private String nombre;
-    private Float porcentaje;
+    private String porcentaje;
     
     public SoftSkills(){ 
                
     }
-    public SoftSkills(Long id, String nombre, String apellido){
+    public SoftSkills(Long id, String nombre, String porcentaje){
         this.id = id;
         this.nombre = nombre;
         this.porcentaje = porcentaje;

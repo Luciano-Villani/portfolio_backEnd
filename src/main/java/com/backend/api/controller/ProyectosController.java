@@ -7,6 +7,7 @@ import com.backend.api.services.IProyectosService;
 import java.util.List;
 import static org.hibernate.criterion.Projections.id;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
         
 public class ProyectosController {
     
@@ -33,7 +35,7 @@ public class ProyectosController {
         return proyeServ.verProyectos();
         
     }
-    @DeleteMapping("/proyectos/delete/{id}")
+    @DeleteMapping("/proyecto/delete/{id}")
     public void borrarProyecto (@PathVariable Long id){
         proyeServ.borrarProyecto(id);
         

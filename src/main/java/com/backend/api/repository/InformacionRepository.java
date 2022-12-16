@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InformacionRepository extends JpaRepository <Informacion, Long>{
-    
+    Informacion findFirstByOrderByIdAsc();
+            
 }
 
 

@@ -16,12 +16,12 @@ public class HardSkills {
     
     private Long id;
     private String nombre;
-    private Float porcentaje;
+    private String porcentaje;
     
     public HardSkills(){ 
                
     }
-    public HardSkills(Long id, String nombre, String apellido){
+    public HardSkills(Long id, String nombre, String porcentaje){
         this.id = id;
         this.nombre = nombre;
         this.porcentaje = porcentaje;

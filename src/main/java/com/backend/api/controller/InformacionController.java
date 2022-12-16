@@ -46,5 +46,13 @@ public class InformacionController {
     @PutMapping ("/actualizar/informacion")
     public void actualizarInformacion (@RequestBody Informacion infos){
         infoServ.actualizarInformacion(infos);
+        
+    }  //agregado mio  
+    @GetMapping ("/ver/informacion1")
+    @ResponseBody  
+     public Informacion verInformacion1 (){
+        return infoServ.verInformacion1 ();
+        
+    }
 }
-}
+

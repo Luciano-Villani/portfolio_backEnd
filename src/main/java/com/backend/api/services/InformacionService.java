@@ -14,7 +14,7 @@ public class InformacionService implements IInformacionService{
     public InformacionRepository infoRepo;
     
     @Override
-    public List<Informacion> verInformacion () {
+    public List<Informacion> verInformacion() {
        return infoRepo.findAll();
     }
 
@@ -39,6 +39,10 @@ public class InformacionService implements IInformacionService{
     public void actualizarInformacion(Informacion inf) {
         infoRepo.save(inf);
     }
-
+//agregado
+    @Override
+    public Informacion verInformacion1() {
+        return infoRepo.findFirstByOrderByIdAsc();
+    }
   
 }
