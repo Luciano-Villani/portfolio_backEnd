@@ -16,7 +16,9 @@ public class RedesSociales {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String url;
+    private String urlDestino;
+    private String icon;
+    
   
     
     public RedesSociales(){
@@ -24,7 +26,8 @@ public class RedesSociales {
     }
     public RedesSociales(Long id, String url){
         this.id = id;
-        this.url = url;
+        this.urlDestino = urlDestino;
+        this.icon = icon;
         
         
     }

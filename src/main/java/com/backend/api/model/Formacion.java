@@ -19,6 +19,8 @@ public class Formacion {
     private Long id;
     private String titulo;
     private String descripcion;
+    private String referencia;
+    
     
     public Formacion(){
                
@@ -27,6 +29,7 @@ public class Formacion {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
+        this.referencia = referencia;
         
     }
     
